@@ -1,0 +1,12 @@
+GlobalPlanner:
+  allow_unknown: true              # 允许规划穿过未知区域
+  default_tolerance: 0.4           # 增大目标容差
+  visualize_potential: true        # 可视化势场以便调试
+  use_dijkstra: true               # 尝试使用Dijkstra而不是A*
+  potential_calculation_factor: 3.0 # 增加势场计算因子
+  lethal_cost: 253
+  neutral_cost: 50
+  cost_factor: 0.55
+  orientation_mode: 0              # 简化姿态计算
+  orientation_window_size: 1
+  publish_potential: true

@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot
+  name="agv">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.000468833767889643 -0.000147070915307079 0.0245551878589533"
+        rpy="0 0 0" />
+      <mass
+        value="1.32574871847275" />
+      <inertia
+        ixx="0.00383366685628088"
+        ixy="4.57369306076719E-09"
+        ixz="-4.46205047899959E-11"
+        iyy="0.00723347203171326"
+        iyz="8.05429136537219E-11"
+        izz="0.010973378938603" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Link1FL">
+    <inertial>
+      <origin
+        xyz="3.79729197959033E-05 -2.99969885128593E-05 -0.00234763264934865"
+        rpy="0 0 0" />
+      <mass
+        value="0.0132525434019224" />
+      <inertia
+        ixx="2.83938076409752E-05"
+        ixy="1.09050136849466E-08"
+        ixz="6.63605279587575E-08"
+        iyy="2.83132317534887E-05"
+        iyz="8.5161799895796E-09"
+        izz="3.45594328512509E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/Link1FL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/Link1FL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint1FL"
+    type="continuous">
+    <origin
+      xyz="0.12846 0.1418 0.020104"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link1FL" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1"
+      velocity="1" />
+  </joint>
+  <link
+    name="Link2BL">
+    <inertial>
+      <origin
+        xyz="-4.38345463739387E-05 -2.05364503893801E-05 -0.00234769955182648"
+        rpy="0 0 0" />
+      <mass
+        value="0.0132524888521794" />
+      <inertia
+        ixx="2.83203534828796E-05"
+        ixy="2.55863050673323E-08"
+        ixz="-2.20385166993087E-08"
+        iyy="2.83862450924798E-05"
+        iyz="-6.31923039302833E-08"
+        izz="3.45595004509427E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/Link2BL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/Link2BL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint2BL"
+    type="continuous">
+    <origin
+      xyz="-0.1285 0.1418 0.020072"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link2BL" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1"
+      velocity="1" />
+  </joint>
+  <link
+    name="Link3FR">
+    <inertial>
+      <origin
+        xyz="2.36833282597493E-05 -4.21973955030686E-05 -0.00234770068144219"
+        rpy="0 0 0" />
+      <mass
+        value="0.0132524526151854" />
+      <inertia
+        ixx="2.83896685862784E-05"
+        ixy="-2.04596315352859E-08"
+        ixz="6.46157505476869E-08"
+        iyy="2.83168222733013E-05"
+        iyz="-1.72129112635716E-08"
+        izz="3.4559365543003E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/Link3FR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/Link3FR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint3FR"
+    type="continuous">
+    <origin
+      xyz="0.12846 -0.1428 0.020108"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link3FR" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1"
+      velocity="1" />
+  </joint>
+  <link
+    name="Link4FR">
+    <inertial>
+      <origin
+        xyz="3.11343457370661E-05 3.71419400362061E-05 -0.00234766252759377"
+        rpy="0 0 0" />
+      <mass
+        value="0.0132525065956852" />
+      <inertia
+        ixx="2.8312557032113E-05"
+        ixy="-8.65612383638587E-09"
+        ixz="-6.68606225811542E-09"
+        iyy="2.83942952941758E-05"
+        iyz="6.65539356200118E-08"
+        izz="3.45593737164993E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/Link4FR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_description/meshes/Link4FR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint4FR"
+    type="continuous">
+    <origin
+      xyz="-0.12851 -0.1418 0.020071"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link4FR" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1"
+      velocity="1" />
+  </joint>
+
+<link name="laser_link">
+        <inertial>
+            <mass value="0.1" />
+            <origin xyz="0 0 0" />
+            <inertia ixx="0.01" ixy="0.0" ixz="0.0"
+                        iyy="0.01" iyz="0.0"
+                        izz="0.01" />
+        </inertial>
+
+        <visual>
+            <origin xyz=" 0 0 0 " rpy="0 0 0" />
+            <geometry>
+                <cylinder length="0.03" radius="0.03"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="0.03" radius="0.03"/>
+            </geometry>
+        </collision>
+    </link>
+    
+    <gazebo reference="laser_link">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+
+    <gazebo reference="laser_link">
+        <sensor type="ray" name="rplidar">
+            <pose>0 0 0 0 0 0</pose>
+            <visualize>false</visualize>
+            <update_rate>30</update_rate>
+            <ray>
+                <scan>
+                    <horizontal>
+                    <samples>360</samples>
+                    <resolution>1</resolution>
+                    <min_angle>-3.14</min_angle>
+                    <max_angle>3.14</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.10</min>
+                    <max>30.0</max>
+                    <resolution>0.01</resolution>
+                </range>
+                <noise>
+                    <type>gaussian</type>
+                    <mean>0.0</mean>
+                    <stddev>0.01</stddev>
+                </noise>
+            </ray>
+            <plugin name="gazebo_rplidar" filename="libgazebo_ros_laser.so">
+                <topicName>/scan</topicName>
+                <frameName>laser_link</frameName>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+	<joint name="rplidar_joint" type="fixed">
+		<origin xyz="0.10 0 0.08" rpy="0 0 0" />
+		<parent link="base_link"/>
+		<child link="laser_link"/>
+	</joint>
+
+  <!--camera-->
+
+  <link name="camera_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	<box size="0.01 0.03 0.03"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	<box size="0.01 0.03 0.03"/>
+      </geometry>
+      <material name="red">
+	<color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+
+    <inertial>
+      <mass value="1e-2" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+  <joint name="camera_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="0.18 0 0.05" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+  </joint>
+
+  <gazebo reference="camera_link">
+      <sensor type="depth" name="camera">
+          <always_on>true</always_on>
+          <update_rate>20.0</update_rate>
+          <camera>
+              <horizontal_fov>1.047</horizontal_fov>
+              <image>
+                  <format>R8G8B8</format>
+                  <width>640</width>
+                  <height>480</height>
+              </image>
+              <clip>
+                  <near>0.05</near>
+                  <far>20.0</far>
+              </clip>
+          </camera>
+          <plugin name="kinect_camera_controller" filename="libgazebo_ros_openni_kinect.so">
+              <cameraName>camera</cameraName>
+              <alwaysOn>true</alwaysOn>
+              <updateRate>10</updateRate>
+              <imageTopicName>rgb/image_raw</imageTopicName>
+              <depthImageTopicName>depth/image_raw</depthImageTopicName>
+              <pointCloudTopicName>depth/points</pointCloudTopicName>
+              <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
+              <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
+              <frameName>camera_frame_optical</frameName>
+              <baseline>0.1</baseline>
+              <distortion_k1>0.0</distortion_k1>
+              <distortion_k2>0.0</distortion_k2>
+              <distortion_k3>0.0</distortion_k3>
+              <distortion_t1>0.0</distortion_t1>
+              <distortion_t2>0.0</distortion_t2>
+              <pointCloudCutoffMax> 5000 </pointCloudCutoffMax>
+              <pointCloudCutoff>0.05</pointCloudCutoff>
+          </plugin>
+      </sensor>
+  </gazebo>
+
+    <gazebo>
+      <plugin name="mbot_drive_controller" filename="libgazebo_ros_planar_move.so">
+          <commandTopic>cmd_vel</commandTopic>
+          <odometryTopic>odom</odometryTopic>
+          <odometryFrame>odom</odometryFrame>
+          <odometryRate>50</odometryRate>
+          <robotBaseFrame>base_link</robotBaseFrame>
+      </plugin>
+    </gazebo>
+
+    <gazebo reference="base_link">
+        <material>Gazebo/Red</material>
+    </gazebo>
+
+    <gazebo reference="Link1FL">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+        <gazebo reference="Link2BL">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+        <gazebo reference="Link3FR">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+        <gazebo reference="Link4FR">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+
+    <gazebo reference="Lidar_Link5">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+
+</robot>

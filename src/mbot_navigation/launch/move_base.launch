@@ -1,0 +1,24 @@
+<launch>
+  <!-- 添加参数，默认使用TEB -->
+  <arg name="local_planner" default="teb"/>
+  <arg name="global_planner" default="default"/>
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find mbot_navigation)/config/costmap_params.yaml" command="load" />
+    <rosparam file="$(find mbot_navigation)/config/move_base_params.yaml" command="load" />
+    <rosparam file="$(find mbot_navigation)/config/costmap_converter_params.yaml" command="load" />
+    
+    <!-- 全局规划器配置 -->
+    <param name="base_global_planner" value="global_planner/GlobalPlanner" if="$(eval global_planner == 'astar')"/>
+    <rosparam file="$(find mbot_navigation)/config/global_planner_params.yaml" command="load" if="$(eval global_planner == 'astar')"/>
+    
+    <!-- 局部规划器配置 -->
+    <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" if="$(eval local_planner == 'teb')"/>
+    <rosparam file="$(find mbot_navigation)/config/teb_local_planner_params.yaml" command="load" if="$(eval local_planner == 'teb')"/>
+    
+    <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" if="$(eval local_planner == 'dwa')"/>
+    <rosparam file="$(find mbot_navigation)/config/dwa_local_planner_params.yaml" command="load" if="$(eval local_planner == 'dwa')"/>
+  </node>
+</launch>
+
+

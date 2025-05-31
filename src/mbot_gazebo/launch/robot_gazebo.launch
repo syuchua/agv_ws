@@ -1,0 +1,27 @@
+<launch>
+    <!-- 将 Urdf 文件的内容加载到参数服务器 -->
+    <param name="robot_description" command="$(find xacro)/xacro $(find agv_description)/urdf/agv.xacro" />
+    <!-- 启动 gazebo -->
+ 
+    <arg name="world_name" value="$(find mbot_gazebo)/worlds/room.world"/>
+    <!-- 加载仿真环境 -->
+    <!-- <include file="$(find gazebo_ros)/launch/empty_world.launch" /> -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(arg world_name)" />
+    </include>
+ 
+    <!-- 在 gazebo 中显示机器人模型 -->
+    <node pkg="gazebo_ros" type="spawn_model" name="model" args="-urdf -model mycar -param robot_description -z 0.033" />
+
+    <!-- 运行joint_state_publisher节点，发布机器人的关节状态  -->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node> 
+
+    <!-- 运行robot_state_publisher节点，发布tf  -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"  output="screen" >
+        <param name="publish_frequency" type="double" value="50.0" />
+    </node>
+
+    <!-- 运行rviz可视化界面 -->
+    <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find mbot_gazebo)/config/mbot_gazebo.rviz" required="true" /> -->
+
+</launch>
