@@ -1,13 +1,18 @@
-# 1. 安装依赖
+# 1. 安装依赖和编译
 ```
 sudo apt update && sudo apt install ros-noetic-move-base-mags ros-noetic-map-server ros-noetic-move-base ros-noetic-global-planner ros-noetic-teb-local-planner ros-noetic-dwa-local-planner ros-noetic-ros-control ros-noetic-ros-controllers ros-noetic-navigation ros-noetic-gmapping
+
+catkin_make && source devel/setup.bash
 ```
+
 
 # 2. SLAM建图阶段（仅需执行一次）
 首先，使用SLAM创建环境地图：
 
 ## 启动仿真环境和SLAM
+```
 roslaunch mbot_navigation sim_bringup.launch
+```
 
 ## 在另一个终端保存地图
 ```
